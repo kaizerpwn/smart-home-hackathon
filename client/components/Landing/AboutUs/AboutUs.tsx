@@ -15,7 +15,7 @@ const AboutUs = () => {
                             Nudimo raspon pametnih uređaja koji se besprijekorno integrišu sa HomeLab Hub-om. Naše pristupačne rješenja čine pametni dom dostupnim svima.<br/><br/>
                                 <span className="font-semibold">Pridružite se revoluciji pametnog doma danas sa HomeLab-om.</span></div>
                         </div>
-                        <button className="inline-flex px-6 py-2 ml-2 text-lg rounded-full btn">Kontaktirajte Nas</button>
+                        <a href="#kontakt" className="inline-flex px-6 py-2 ml-2 text-lg rounded-full btn">Kontaktirajte Nas</a>
                         </div>
                         <div className="w-full overflow-hidden rounded-lg lg:w-1/2 sm:mt-0">
                             <Image loader={imageLoader} className="w-full my-auto xl:h-full" alt="hero image smart home" src={`images/Landing/aboutus.png`} width={600} height={300} />

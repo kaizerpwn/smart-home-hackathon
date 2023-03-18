@@ -1,7 +1,7 @@
 
 const Contact = () => {
   return (
-    <section className="relative text-gray-600 body-font">
+    <section className="relative text-gray-600 body-font" id="kontakt">
   <div className="container px-5 py-24 mx-auto">
     <div className="flex flex-col w-full mb-12 text-center">
       <h1 className="mb-4 text-2xl font-semibold text-gray-900 sm:text-4xl title-font font-lexend">Kontaktirajte Nas</h1>
