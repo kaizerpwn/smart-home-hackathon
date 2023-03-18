@@ -9,20 +9,20 @@ const Hero = () => {
         return src;
     }
   return (
-      <section className="text-gray-600 body-font" id="pocetna">
+      <section className="text-gray-600 body-font font-lexend" id="pocetna">
   <div className="container flex flex-col items-center px-5 py-24 mx-auto md:flex-row">
     <div className="w-5/6 mb-10 lg:max-w-3xl lg:w-full md:w-full md:mb-0">
                   <Image loader={imageLoader} className="object-cover object-center rounded-3xl" alt="hero image smart home" src={`images/Landing/hero.png`} width={1000} height={600} />
     </div>
     <div className="flex flex-col items-center text-center lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 md:items-start md:text-left">
-      <h1 className="mb-4 text-3xl font-bold text-gray-900 title-font sm:text-4xl">HomeLab - Neka Vaš dom postane pametan</h1>
-      <p className="mb-8 text-lg leading-relaxed">Transforming homes into smart and automated spaces with innovative technology and affordable solutions</p>
+      <h1 className="mb-4 text-3xl font-bold text-gray-900 title-font sm:text-4xl font-lexend">HomeLab - Neka Vaš dom postane pametan</h1>
+      <p className="mb-8 text-lg leading-relaxed font-lexend">Transforming homes into smart and automated spaces with innovative technology and affordable solutions</p>
       <div className="flex items-end justify-center w-full mb-5 md:justify-start">
         <div className="w-2/4 mr-4 lg:w-full xl:w-1/2">
-          <label className="pl-2 text-sm leading-7 text-gray-600">Prijavite se na naš newsletter.</label>
+          <label className="pl-2 text-sm leading-7 text-gray-600 font-lexend">Prijavite se na naš newsletter.</label>
           <input type="text" id="hero-field" placeholder="Email" name="hero-field" className="w-full px-3 py-2 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded-full outline-none focus:ring-2 focus:ring-primaryColor focus:bg-transparent focus:border-primaryColor"/>
         </div>
-        <button className="inline-flex px-6 py-2 text-lg rounded-full btn">Pretplatite se</button>
+        <button className="inline-flex px-6 py-2 text-lg rounded-full btn font-lexend">Pretplatite se</button>
       </div>
       <div className="flex lg:flex-row md:flex-col">
         <button className="inline-flex items-center px-5 py-3 bg-gray-100 rounded-lg hover:bg-gray-200 focus:outline-none">

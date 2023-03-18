@@ -7,7 +7,7 @@ const Steps = () => {
     }
 
   return (
-    <section className="pb-40 text-gray-600 body-font" id="instalacija">
+    <section className="pb-40 text-gray-600 body-font font-lexend" id="instalacija">
   <div className="container flex flex-wrap px-5 py-24 mx-auto">
     <div className="flex flex-wrap w-full">
           <div className="lg:w-2/5 md:w-1/2 md:pr-10 md:py-6">

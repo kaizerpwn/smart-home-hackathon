@@ -18,7 +18,10 @@ module.exports = {
         secondaryColor: "#7d54f8",
         whiteSoft: "#F7EBFF",
         greenSoft: "#005243"
-      }
+      },
+      fontFamily: {
+        'lexend': ['Lexend', 'sans-serif']
+      },
     },
   },
   plugins: [],

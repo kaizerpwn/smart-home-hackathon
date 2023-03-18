@@ -4,35 +4,35 @@ const Contact = () => {
     <section className="relative text-gray-600 body-font">
   <div className="container px-5 py-24 mx-auto">
     <div className="flex flex-col w-full mb-12 text-center">
-      <h1 className="mb-4 text-2xl font-semibold text-gray-900 sm:text-4xl title-font">Kontaktirajte Nas</h1>
-      <p className="mx-auto text-lg leading-relaxed lg:w-2/3">Želite saznati nešto o Nama? Zanima Vas naš proizvod? Ovdje nas možete kontaktirati.</p>
+      <h1 className="mb-4 text-2xl font-semibold text-gray-900 sm:text-4xl title-font font-lexend">Kontaktirajte Nas</h1>
+      <p className="mx-auto text-lg leading-relaxed lg:w-2/3 font-lexend">Želite saznati nešto o Nama? Zanima Vas naš proizvod? Ovdje nas možete kontaktirati.</p>
     </div>
     <div className="mx-auto lg:w-1/2 md:w-2/3">
       <div className="flex flex-wrap -m-2">
         <div className="w-1/2 p-2">
           <div className="relative">
-            <label className="text-lg leading-7 text-gray-600">Ime i prezime</label>
+            <label className="text-lg leading-7 text-gray-600 font-lexend">Ime i prezime</label>
             <input type="text" id="name" name="name" className="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded-full outline-none focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200"/>
           </div>
         </div>
         <div className="w-1/2 p-2">
           <div className="relative">
-            <label className="text-lg leading-7 text-gray-600">Email</label>
+            <label className="text-lg leading-7 text-gray-600 font-lexend">Email</label>
             <input type="email" id="email" name="email" className="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded-full outline-none focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200"/>
           </div>
         </div>
         <div className="w-full p-2">
           <div className="relative">
-            <label className="text-lg leading-7 text-gray-600">Poruka</label>
+            <label className="text-lg leading-7 text-gray-600 font-lexend">Poruka</label>
             <textarea id="message" name="message" className="w-full h-32 px-3 py-1 text-base leading-6 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 outline-none resize-none rounded-xl focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200"></textarea>
           </div>
         </div>
         <div className="flex justify-center w-full p-2">
-        <button className="inline-flex px-6 py-2 text-lg rounded-full btn">Pošaljite Upit</button>
+        <button className="inline-flex px-6 py-2 text-lg rounded-full btn font-lexend">Pošaljite Upit</button>
         </div>
         <div className="w-full p-2 pt-8 mt-8 text-center border-t border-gray-200">
-          <a className="text-indigo-500">info@homelab.ba</a>
-          <p className="my-5 leading-normal">Trg Soli,
+          <a className="text-indigo-500 font-lexend">info@homelab.ba</a>
+          <p className="my-5 leading-normal font-lexend">Trg Soli,
             <br/>Tuzla 75000, BiH
           </p>
           <span className="inline-flex">
