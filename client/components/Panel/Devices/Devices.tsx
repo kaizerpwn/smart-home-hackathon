@@ -34,7 +34,7 @@ const Devices = () => {
         <>
             <div className="flex flex-col text-white bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600 rounded-xl">
                 <div className="flex mt-4 ml-4 ">
-                    <TbDevicesPc className="p-1 text-5xl rounded-full bg-gradient-to-r from-primaryColor to-secondaryColor"/>
+                    <TbDevicesPc className="p-1 text-5xl rounded-full bg-secondaryColor"/>
                     <span className="items-center my-auto ml-2 text-xl font-bold">Dostupni uređaji</span>
                 </div>
                 <div className="overflow-x-auto sm:-mx-6 lg:-mx-8" id="uredjaji">

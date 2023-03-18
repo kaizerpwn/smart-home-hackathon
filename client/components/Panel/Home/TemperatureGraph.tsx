@@ -84,23 +84,23 @@ export default function TemperatureGraph ({ weather }:WeatherProps) {
   return (
     <>
       	<div className="flex flex-wrap gap-12 lg:flex-nowrap">
-          <div className="lg:w-[65%] p-2 mt-10 text-white bg-gradient-to-r from-gray-700 via-gray-600 to-gray-500 rounded-3xl">
+          <div className="lg:w-[65%] p-6 mt-10 text-white bg-gradient-to-r from-gray-700 via-gray-600 to-gray-500 rounded-3xl">
               <div className='flex items-center space-x-2'>
-                <FaThermometerQuarter className="p-1 text-5xl rounded-full bg-gradient-to-r from-primaryColor to-secondaryColor"/>
-                <span className="uppercase opacity-50">Temperature po satu</span>
+                <FaThermometerQuarter className="p-1 text-5xl rounded-full bg-secondaryColor"/>
+                <span className="opacity-50">Temperature po satu</span>
               </div>
               <Line options={options as ChartOptions} data={data} />
           </div>
-          <div className="xs:w-full sm:w-full lg:w-[32%] p-2 mt-10 text-white bg-gradient-to-r from-gray-500 via-gray-600 to-gray-700 rounded-3xl">
+          <div className="xs:w-full sm:w-full lg:w-[32%] p-6 mt-10 text-white bg-gradient-to-r from-gray-500 via-gray-600 to-gray-700 rounded-3xl">
               <div className='flex items-center space-x-2'>
-                <BsThermometerSun className="p-1 text-5xl rounded-full bg-gradient-to-r from-primaryColor to-secondaryColor"/> 
-                <span className="uppercase opacity-50 ">Vanjska temperatura</span>
+                <BsThermometerSun className="p-1 text-5xl rounded-full bg-secondaryColor"/> 
+                <span className="opacity-50 ">Vanjska temperatura</span>
               </div> 
               {renderIcon()}
               <span className='flex justify-center mt-4 text-5xl'>{weather?.current?.temp_c}&deg;</span>
               <span className='flex justify-center text-md'>stepeni celzijusa</span>
               <div className="flex justify-center mt-10"> 
-                <span className='mt-[0.7%] text-xl opacity-50'>Vlažnost vazduha :</span>
+                <span className='mt-[0.7%] text-xl opacity-50'>Vlažnost vazduha: &nbsp;</span>
                 <span className='text-2xl text-white opacity-100'>{weather?.current?.humidity} %</span>
               </div>
           </div>
