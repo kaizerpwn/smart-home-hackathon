@@ -11,7 +11,7 @@ export default function Home() {
       </Head>
       <main>
         {/* Project start */}
-        
+        <div className="text-red-500">test</div>
       </main>
     </>
   )
