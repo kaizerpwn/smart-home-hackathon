@@ -28,12 +28,12 @@ const Contact = () => {
           </div>
         </div>
         <div className="flex justify-center w-full p-2">
-        <button className="inline-flex px-6 py-2 text-lg rounded-full btn">Request DEMO</button>
+        <button className="inline-flex px-6 py-2 text-lg rounded-full btn">Pošaljite Upit</button>
         </div>
         <div className="w-full p-2 pt-8 mt-8 text-center border-t border-gray-200">
-          <a className="text-indigo-500">example@email.com</a>
-          <p className="my-5 leading-normal">49 Smith St.
-            <br/>Saint Cloud, MN 56301
+          <a className="text-indigo-500">info@homelab.ba</a>
+          <p className="my-5 leading-normal">Trg Soli,
+            <br/>Tuzla 75000, BiH
           </p>
           <span className="inline-flex">
             <a className="text-gray-500">

@@ -6,7 +6,7 @@ const AboutUs = () => {
     }
 
         return (
-                <section className="pb-20 text-gray-600 body-font">
+                <section className="pb-20 text-gray-600 body-font" id="onama">
                     <div className="container flex flex-wrap px-5 py-10 mx-auto">
                         <div className="flex flex-wrap content-start mt-auto -mx-4 lg:w-1/2 sm:w-2/3 sm:pr-10">
                             <div className="w-full px-4 mb-6 sm:p-4">

@@ -9,7 +9,7 @@ const Hero = () => {
         return src;
     }
   return (
-      <section className="text-gray-600 body-font">
+      <section className="text-gray-600 body-font" id="pocetna">
   <div className="container flex flex-col items-center px-5 py-24 mx-auto md:flex-row">
     <div className="w-5/6 mb-10 lg:max-w-3xl lg:w-full md:w-full md:mb-0">
                   <Image loader={imageLoader} className="object-cover object-center rounded-3xl" alt="hero image smart home" src={`images/Landing/hero.png`} width={1000} height={600} />
@@ -18,7 +18,8 @@ const Hero = () => {
       <h1 className="mb-4 text-3xl font-bold text-gray-900 title-font sm:text-4xl">HomeLab - Neka Vaš dom postane pametan</h1>
       <p className="mb-8 text-lg leading-relaxed">Transforming homes into smart and automated spaces with innovative technology and affordable solutions</p>
       <div className="flex items-end justify-center w-full mb-5 md:justify-start">
-        <div className="relative w-2/4 mr-4 lg:w-full xl:w-1/2">
+        <div className="w-2/4 mr-4 lg:w-full xl:w-1/2">
+          <label className="pl-2 text-sm leading-7 text-gray-600">Prijavite se na naš newsletter.</label>
           <input type="text" id="hero-field" placeholder="Email" name="hero-field" className="w-full px-3 py-2 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded-full outline-none focus:ring-2 focus:ring-primaryColor focus:bg-transparent focus:border-primaryColor"/>
         </div>
         <button className="inline-flex px-6 py-2 text-lg rounded-full btn">Pretplatite se</button>

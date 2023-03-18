@@ -1,7 +1,7 @@
 
 const Benefits = () => {
   return (
-    <section className="flex-col pb-40 text-gray-600 body-font">
+    <section className="flex-col pb-40 text-gray-600 body-font" id="benefiti">
       <div className="flex justify-center w-full">
         <h2 className="text-4xl font-semibold">Koje benefite Vam donosi HomeLab?</h2>
       </div>
