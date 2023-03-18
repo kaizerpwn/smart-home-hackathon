@@ -18,7 +18,7 @@ const Hero = () => {
       <h1 className="mb-4 text-3xl font-bold text-gray-900 title-font lg:text-xl xl:text-4xl font-lexend">HomeLab - Neka Vaš dom postane pametan</h1>
       <p className="mb-8 text-lg leading-relaxed font-lexend">Transforming homes into smart and automated spaces with innovative technology and affordable solutions</p>
       <div className="items-end justify-center w-full mb-5 flex-nowrap lg:flex-wrap xl:flex-nowrap lg:flex md:justify-start">
-        <div className="w-full mx-auto mr-4 sm:w-full xl:w-1/2">
+        <div className="w-full mx-auto mr-4 md:mx-1 sm:w-full xl:w-1/2">
           <label className="text-sm leading-7 text-gray-600 md:mr-0 sm:mr-2 md:pl-2 xl:w-1/2 font-lexend">Prijavite se na naš newsletter.</label>
           <input type="text" id="hero-field" placeholder="Email" name="hero-field" className="px-3 py-2 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded-full outline-none xl:w-full lg:w-2/3 focus:ring-2 focus:ring-primaryColor focus:bg-transparent focus:border-primaryColor"/>
             </div>

@@ -25,7 +25,7 @@ const Rooms = () => {
             <div className="flex flex-col text-white bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600 rounded-xl">
                 <div className="grid w-full grid-cols-1 grid-rows-1 mt-4 ml-4 sm:grid-cols-2 sm:justify-items-stretch">
                     <div className='flex justify-self-start'>
-                        <FaBed className="p-1 text-5xl rounded-full bg-gradient-to-r from-primaryColor to-secondaryColor"/>
+                        <FaBed className="p-1 text-5xl rounded-full bg-secondaryColor"/>
                         <span className="items-center my-auto ml-2 text-xl font-bold">Vaše prostorije</span>
                     </div>
                     <button className="px-4 py-1 mr-8 text-white duration-500 ease-in-out rounded-lg xs:mt-4 xs:justify-center sm:justify-self-end bg-secondaryColor hover:bg-primaryColor" onClick={handleModal}>Dodaj novu</button>

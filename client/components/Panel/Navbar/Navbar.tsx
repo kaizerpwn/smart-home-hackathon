@@ -19,7 +19,7 @@ const Navbar = () => {
   
     return (
         <>
-        <div className="absolute flex-col justify-between hidden w-64 bg-gray-800 shadow sm:relative md:h-full sm:flex" style={{height:"150vh"}}>
+        <div className="absolute flex-col justify-between hidden w-64 bg-gray-800 shadow sm:relative font-lexend md:h-full sm:flex" style={{height:"150vh"}}>
             <div className="px-8">
                 <div className="flex items-center w-full h-16 mt-4 -ml-1">
                     <Link href="/">
@@ -28,7 +28,7 @@ const Navbar = () => {
                 </div>
                 <ul className="mt-8">
                     <Link href="/panel">
-                        <li className={router.pathname === '/panel' ? "flex items-center justify-between w-full px-4 py-2 mb-3 text-gray-100 duration-100 ease-in cursor-pointer rounded-xl hover:bg-primaryColor bg-primaryColor" : "flex items-center justify-between w-full px-4 py-2 mb-3 text-gray-100 duration-100 ease-in cursor-pointer rounded-xl hover:bg-primaryColor"}>
+                        <li className={router.pathname === '/panel' ? "flex items-center justify-between w-full px-4 py-2 mb-3 text-gray-100 duration-100 ease-in cursor-pointer rounded-xl hover:bg-secondaryColor bg-secondaryColor" : "flex items-center justify-between w-full px-4 py-2 mb-3 text-gray-100 duration-100 ease-in cursor-pointer rounded-xl hover:bg-secondaryColor"}>
                             <div className="flex items-center focus:outline-none focus:ring-2 focus:ring-white"> 
                                 <AiFillHome className="w-6 h-6"/> 
                                 <span className="ml-2 text-md">Početna</span>
@@ -36,7 +36,7 @@ const Navbar = () => {
                         </li>
                     </Link>
                     <Link href="/panel/uredjaji">
-                        <li className={router.pathname === '/panel/uredjaji' ? "flex items-center justify-between w-full px-4 py-2 mb-3 text-gray-100 duration-100 ease-in cursor-pointer rounded-xl hover:bg-primaryColor bg-primaryColor" : "flex items-center justify-between w-full px-4 py-2 mb-3 text-gray-100 duration-100 ease-in cursor-pointer rounded-xl hover:bg-primaryColor"}>
+                        <li className={router.pathname === '/panel/uredjaji' ? "flex items-center justify-between w-full px-4 py-2 mb-3 text-gray-100 duration-100 ease-in cursor-pointer rounded-xl hover:bg-secondaryColor bg-secondaryColor" : "flex items-center justify-between w-full px-4 py-2 mb-3 text-gray-100 duration-100 ease-in cursor-pointer rounded-xl hover:bg-secondaryColor"}>
                             <div className="flex items-center focus:outline-none focus:ring-2 focus:ring-white"> 
                                 <BsCameraReelsFill className="w-6 h-6"/>
                                 <span className="ml-2 text-md">Uređaji</span>
@@ -44,7 +44,7 @@ const Navbar = () => {
                         </li>
                     </Link>
                     <Link href="/panel/prostorije">
-                        <li className={router.pathname === '/panel/prostorije' ? "flex items-center justify-between w-full px-4 py-2 mb-3 text-gray-100 duration-100 ease-in cursor-pointer rounded-xl hover:bg-primaryColor bg-primaryColor" : "flex items-center justify-between w-full px-4 py-2 mb-3 text-gray-100 duration-100 ease-in cursor-pointer rounded-xl hover:bg-primaryColor"}>
+                        <li className={router.pathname === '/panel/prostorije' ? "flex items-center justify-between w-full px-4 py-2 mb-3 text-gray-100 duration-100 ease-in cursor-pointer rounded-xl hover:bg-secondaryColor bg-secondaryColor" : "flex items-center justify-between w-full px-4 py-2 mb-3 text-gray-100 duration-100 ease-in cursor-pointer rounded-xl hover:bg-secondaryColor"}>
                             <div className="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
                                 <MdBedroomChild className="w-6 h-6"/>
                                 <span className="ml-2 text-md">Prostorije</span>
