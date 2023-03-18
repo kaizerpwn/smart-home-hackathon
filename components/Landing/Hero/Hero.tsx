@@ -51,25 +51,25 @@ const Hero = () => {
     <div className="flex flex-wrap justify-between -m-4 text-center">
       <div className="w-1/2 p-4 space-y-5 md:w-1/5 rounded-3xl">
         <FaMedal className="mx-auto text-5xl text-secondaryColor"></FaMedal>
-            <p className="font-semibold leading-relaxed text-black md:text-xl">Profesionalalna Usluga</p>
-            <p className="text-black">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga facere commodi sunt laboriosam vitae quidem</p>
+            <p className="font-semibold leading-relaxed text-black md:text-xl">Profesionalna Usluga</p>
+            <p className="text-black">Profesionalna usluga koju pruža ovaj program je olakšavanje i ubrzavanje životnih procesa kroz intuitivno sučelje</p>
       </div>
       <div className="w-1/2 p-4 space-y-5 md:w-1/5 rounded-3xl">
       <IoIosTime className="mx-auto text-5xl text-secondaryColor"></IoIosTime>
             <p className="font-semibold leading-relaxed text-black md:text-xl">Podrška 24/7</p>
-            <p className="text-black">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga facere commodi sunt laboriosam vitae quidem</p>
+            <p className="text-black">Pružanje 24/7 podrške koja omogućava korisnicima da uvijek budu povezani i dobiju brzu i efikasnu pomoć.</p>
 
       </div>
       <div className="w-1/2 p-4 space-y-5 md:w-1/5 rounded-3xl">
       <BiWorld className="mx-auto text-5xl text-secondaryColor"></BiWorld>
             <p className="font-semibold leading-relaxed text-black md:text-xl">Dostupnost Širom Regiona</p>
-            <p className="text-black">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga facere commodi sunt laboriosam vitae quidem</p>
+            <p className="text-black">Dostupnost sirom regije omogućava korisnicima da upravljaju svojim kućnim uređajima bilo gdje u regiji.</p>
 
       </div>
       <div className="w-1/2 p-4 space-y-5 md:w-1/5 rounded-3xl">
       <BsLightningChargeFill className="mx-auto text-5xl text-secondaryColor"></BsLightningChargeFill>
             <p className="font-semibold leading-relaxed text-black md:text-xl">Brza Instalacija</p>
-            <p className="text-black">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga facere commodi sunt laboriosam vitae quidem</p>
+            <p className="text-black"> Instalacija bez potrebe za dugotrajnim postupkom instalacije ili podešavanja s minimalnim naporom i bez tehničkog znanja.</p>
       </div>
     </div>
   </div>
