@@ -5,6 +5,7 @@ import bcrypt from "bcryptjs"
 dotenv.config();
 
 export const registerUser = (req, res) => {
+    console.log(req.body)
     const checkUserExistsQuery = `SELECT COUNT(*) as count FROM korisnici WHERE email = ?`;
     db.query(checkUserExistsQuery, [req.body.email, req.body.username], (err, data) => {
         if (data[0].count === 0) {
@@ -16,8 +17,8 @@ export const registerUser = (req, res) => {
                         if (err) {
                             throw err
                         } else {
-                            const inserNewUserQuery = `INSERT INTO korisnici(ime, prezime, email, lozinka) VALUES(?, ?, ?, ?)`;
-                            db.query(inserNewUserQuery, [req.body.name, req.body.surname, req.body.email, hash], (err, data) => {
+                            const inserNewUserQuery = `INSERT INTO korisnici(ime, prezime, email, lozinka, grad) VALUES(?, ?, ?, ?, ?)`;
+                            db.query(inserNewUserQuery, [req.body.name, req.body.surname, req.body.email, hash, req.body.city], (err, data) => {
                                 return res.send({ message: 200 });
                             });
                         }
@@ -37,7 +38,7 @@ export const loginUser = (req, res) => {
         if (data.length === 0) {
             return res.status(404).json('User with that email not found');
         } else {
-            bcrypt.compare(req.body.password, data[0].password, function (err, isMatch) {
+            bcrypt.compare(req.body.password, data[0].lozinka, function (err, isMatch) {
                 if (err) {
                     throw err
                 } else if (!isMatch) {
