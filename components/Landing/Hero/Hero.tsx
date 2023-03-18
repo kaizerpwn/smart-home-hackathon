@@ -19,7 +19,6 @@ const Hero = () => {
       <p className="mb-8 text-lg leading-relaxed">Transforming homes into smart and automated spaces with innovative technology and affordable solutions</p>
       <div className="flex items-end justify-center w-full mb-5 md:justify-start">
         <div className="relative w-2/4 mr-4 lg:w-full xl:w-1/2">
-          <label className="pl-2 text-sm leading-7 text-gray-600">Budite u toku s našom kompanijom</label>
           <input type="text" id="hero-field" placeholder="Email" name="hero-field" className="w-full px-3 py-2 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded-full outline-none focus:ring-2 focus:ring-primaryColor focus:bg-transparent focus:border-primaryColor"/>
         </div>
         <button className="inline-flex px-6 py-2 text-lg rounded-full btn">Pretplatite se</button>

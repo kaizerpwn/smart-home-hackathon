@@ -82,8 +82,10 @@ const Steps = () => {
             <p className="leading-relaxed">Prilagodite vaše postavke i preference pametnog doma i uživajte u kontroli i praktičnosti vašeg automatizovanog pametnog doma sa Homelab-om.</p>
           </div>
         </div>
-      </div>
-      <Image loader={imageLoader} className="object-cover object-center mt-12 rounded-lg lg:w-3/5 md:w-1/2 md:mt-0" alt="hero image smart home" src={`https://dummyimage.com/1200x500`} width={1000} height={500} />
+          </div>
+          <div className="flex-col w-full my-auto overflow-hidden rounded-lg lg:w-3/5">
+            <Image loader={imageLoader} className="w-full mx-auto my-auto md:w-2/3" src="images/Landing/setup.png" alt="hero image smart home" width={600} height={400} />
+            </div>
     </div>
   </div>
 </section>
