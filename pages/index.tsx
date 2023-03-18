@@ -1,3 +1,5 @@
+import Hero from '@/components/Landing/Hero/Hero'
+import Navbar from '@/components/Landing/Navbar/Navbar'
 import Head from 'next/head'
 
 export default function Home() {
@@ -10,8 +12,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        {/* Project start */}
-        <div className="text-red-500">test</div>
+        <Navbar></Navbar>
+        <Hero></Hero>
       </main>
     </>
   )
