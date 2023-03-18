@@ -1,8 +1,9 @@
 import Breadcrumb from '@/components/Panel/Breadcrumb/Breadcrumb'
-import Devices from '@/components/Panel/Devices/Devices'
 import PanelLayout from '@/components/Panel/PanelLayout'
+import Rooms from '@/components/Panel/Rooms/Rooms'
 import Head from 'next/head'
 import React from 'react'
+import { FaBed } from 'react-icons/fa'
 
 const Dashboard = () => {
   return (
@@ -14,8 +15,8 @@ const Dashboard = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
     <PanelLayout>  
-      <Breadcrumb/>
-      <Devices/>
+      <Breadcrumb/> 
+      <Rooms/> 
     </PanelLayout>
     </>
   )
