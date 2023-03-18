@@ -8,6 +8,7 @@ import { getServerSession } from 'next-auth'
 import options from "../api/auth/[...nextauth]";
 import { imageLoader } from '@/lib/ImageLoader'
 import Image from 'next/image';
+import Axios from '@/lib/Axios';
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
     const session = await getServerSession(context.req, context.res, options);
@@ -22,6 +23,8 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 
 export default function Login({ csrfToken }: InferGetServerSidePropsType<typeof getServerSideProps>) {
 
+    const [error, setError] = useState<string>();
+
     const [texts, setTexts] = useState({
         name:'',
         surname:'',
@@ -30,15 +33,25 @@ export default function Login({ csrfToken }: InferGetServerSidePropsType<typeof 
         city:''
     });
 
+    console.log(texts)
+
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
         setTexts((prev) => ({ ...prev, [e.target.name]: [e.target.value][0] }));
-    }
+    } 
 
-    const handleSignIn = () => {
-        signIn("credentials", { email: texts.email, password: texts.password, callbackUrl: '/panel' });
+    const handleRegister = async () => {
+        const res = await Axios.makeRequest.post('/user/register', texts)
+            .then((result) => {
+                if (result.status === 200 && result.data.message === 302) {
+                    setError('Korisnik sa takvim emailom ili lozinkom već postoji.');
+                } else if (result.status === 200 && result.data.message === 200) { 
+                    signIn("credentials", { email: texts.email, password: texts.password, callbackUrl: '/panel' });
+                }
+            })
     }
 
     const { data: session } = useSession()
+    
     return (
         <>
             <Head>
@@ -78,7 +91,7 @@ export default function Login({ csrfToken }: InferGetServerSidePropsType<typeof 
                                 </div>
                                 <div className="flex justify-center">
                                     
-                                <select id="countries" value={texts.city} className="bg-gray-50 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-700 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                <select name="city" value={texts.city} onChange={handleChange} className="bg-gray-50 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-700 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                     <option selected>Izaberite grad</option>
                                     <option value="Sarajevo">Sarajevo</option>
                                     <option value="Banja Luka">Banja Luka</option>
@@ -122,8 +135,9 @@ export default function Login({ csrfToken }: InferGetServerSidePropsType<typeof 
                                 </select>
                                 </div>
                             </div>
+                            <span className='text-red-400'>{error}</span>
                         </div>
-                        <button type="button" className="w-full px-8 py-3 font-semibold duration-500 rounded-md dark:bg-violet-400 dark:text-gray-800 hover:bg-secondaryColor" onClick={handleSignIn}>Registrujte se</button>
+                        <button type="button" className="w-full px-8 py-3 font-semibold duration-500 rounded-md dark:bg-violet-400 dark:text-gray-800 hover:bg-secondaryColor" onClick={handleRegister}>Registrujte se</button>
                     </form>
                 </div>
             </main>
