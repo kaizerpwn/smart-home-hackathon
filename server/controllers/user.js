@@ -5,7 +5,7 @@ import bcrypt from "bcryptjs"
 dotenv.config();
 
 export const registerUser = (req, res) => {
-    console.log(req.body)
+
     const checkUserExistsQuery = `SELECT COUNT(*) as count FROM korisnici WHERE email = ?`;
     db.query(checkUserExistsQuery, [req.body.email, req.body.username], (err, data) => {
         if (data[0].count === 0) {
