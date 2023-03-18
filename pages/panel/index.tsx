@@ -2,9 +2,32 @@ import Breadcrumb from '@/components/Panel/Breadcrumb/Breadcrumb'
 import CurrentStats from '@/components/Panel/Home/CurrentStats'
 import TemperatureGraph from '@/components/Panel/Home/TemperatureGraph'
 import PanelLayout from '@/components/Panel/PanelLayout'
+import { Weather } from '@/lib/Interfaces/Weather'
+import { WeatherAPI } from '@/lib/WeatherAPI'
 import Head from 'next/head'
+import { useEffect, useState } from 'react'
 
 const Dashboard = () => {
+  const [weatherInfo, setWeatherInfo] = useState<Weather | undefined>();
+
+  useEffect(() => {
+    const getWeatherInfo = async () => {
+      const weatherInstance = new WeatherAPI('Mostar');
+      const info = await weatherInstance.getLocationInfo();
+      setWeatherInfo(info);
+    };
+
+    getWeatherInfo();
+  }, []);
+
+  if (weatherInfo === null) {
+    return <div>Loading...</div>;
+  } 
+
+  const weatherData: Weather = {
+    current: weatherInfo?.current
+  };
+
   return (
     <> 
     <Head>
@@ -16,7 +39,7 @@ const Dashboard = () => {
     <PanelLayout>  
       <Breadcrumb/>
       <CurrentStats/>
-      <TemperatureGraph/>
+      <TemperatureGraph weather={weatherData}/>
     </PanelLayout>
     </>
   )
