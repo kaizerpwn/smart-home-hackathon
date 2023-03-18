@@ -6,24 +6,22 @@
 
 @layer components {
   .headerBtn {
-    background-color: #db2b39;
+    background-color: #7d54f8;
     color: #fff;
     border: none;
     transition: 0.3s;
   }
 
   .headerBtn:hover {
-    background-color: #db2b39;
-    box-shadow: 0 0 0 5px #db2b395f;
+    background-color: #7d54f8;
+    box-shadow: 0 0 0 5px #7d54f85f;
     color: #fff;
   }
 
   .btn {
-    --color: #db2b39;
+    --color: #7d54f8;
     font-family: inherit;
     display: inline-block;
-    width: 8em;
-    height: 2.6em;
     line-height: 2.5em;
     position: relative;
     overflow: hidden;
@@ -61,7 +59,7 @@
   }
 
   .btn:active:before {
-    background: #db2b39;
+    background: #7d54f8;
     transition: background 0s;
   }
 }

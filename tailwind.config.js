@@ -17,8 +17,7 @@ module.exports = {
         primaryColor: "#A78BFA",
         secondaryColor: "#7d54f8",
         whiteSoft: "#F7EBFF",
-        greenSoft: "#005243",
-        primaryRed: "#db2b39"
+        greenSoft: "#005243"
       }
     },
   },
