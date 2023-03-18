@@ -13,9 +13,10 @@ import {
   } from 'chart.js';
 import {FaThermometerQuarter} from "react-icons/fa"
 import {BsThermometerSun} from "react-icons/bs"
-import {BsFillSunFill} from "react-icons/bs"
-import { Line } from 'react-chartjs-2'; 
-  
+import {BsFillSunFill, BsFillMoonFill, BsFillCloudMoonFill} from "react-icons/bs"
+import {TiWeatherPartlySunny} from "react-icons/ti"
+import { Line } from 'react-chartjs-2';  
+import { Weather } from '@/lib/Interfaces/Weather';
   ChartJS.register(
     CategoryScale,
     LinearScale,
@@ -57,14 +58,36 @@ import { Line } from 'react-chartjs-2';
     ],
   };
 
-export default function TemperatureGraph () {
+interface WeatherProps {
+  weather : Weather | undefined;
+}
+
+export default function TemperatureGraph ({ weather }:WeatherProps) { 
+  console.log(weather)
+
+  const renderIcon = () => {
+    if (weather?.current?.cloud === 0 && weather?.current?.is_day === 1) { 
+      return <BsFillSunFill className='flex mx-auto mt-12 text-yellow-400 text-9xl' />;
+    }
+    else if (weather?.current?.cloud === 0 && weather?.current?.is_day === 0) { 
+      return <BsFillMoonFill className='flex mx-auto mt-12 text-white text-9xl' />;
+    }
+    if (weather?.current?.cloud !== 0 && weather?.current?.is_day === 1) { 
+      return <TiWeatherPartlySunny className='flex mx-auto mt-12 text-white text-9xl' />;
+    }
+    else if (weather?.current?.cloud !== 0 && weather?.current?.is_day === 0) { 
+      return <BsFillCloudMoonFill className='flex mx-auto mt-12 text-white text-9xl' />;
+    }
+  };
+  
+
   return (
     <>
       	<div className="flex flex-wrap gap-12 lg:flex-nowrap">
           <div className="lg:w-[65%] p-2 mt-10 text-white bg-gradient-to-r from-gray-700 via-gray-600 to-gray-500 rounded-3xl">
               <div className='flex items-center space-x-2'>
                 <FaThermometerQuarter className="p-1 text-5xl rounded-full bg-gradient-to-r from-primaryColor to-secondaryColor"/>
-                <span className="uppercase opacity-50 ">Temperature po satu</span>
+                <span className="uppercase opacity-50">Temperature po satu</span>
               </div>
               <Line options={options as ChartOptions} data={data} />
           </div>
@@ -73,12 +96,12 @@ export default function TemperatureGraph () {
                 <BsThermometerSun className="p-1 text-5xl rounded-full bg-gradient-to-r from-primaryColor to-secondaryColor"/> 
                 <span className="uppercase opacity-50 ">Vanjska temperatura</span>
               </div> 
-              <BsFillSunFill className='flex mx-auto mt-12 text-yellow-400 text-9xl'/>
-              <span className='flex justify-center mt-4 text-5xl'>24&deg;</span>
+              {renderIcon()}
+              <span className='flex justify-center mt-4 text-5xl'>{weather?.current?.temp_c}&deg;</span>
               <span className='flex justify-center text-md'>stepeni celzijusa</span>
               <div className="flex justify-center mt-10"> 
-                <span className='mt-[0.7%] text-2xl opacity-50'>Kvalitet zraka :</span>
-                <span className='text-3xl text-white opacity-100'>18%</span>
+                <span className='mt-[0.7%] text-xl opacity-50'>Vlažnost vazduha :</span>
+                <span className='text-2xl text-white opacity-100'>{weather?.current?.humidity} %</span>
               </div>
           </div>
         </div>
