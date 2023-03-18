@@ -1,5 +1,10 @@
+import AboutUs from '@/components/Landing/AboutUs/AboutUs'
+import Benefits from '@/components/Landing/Benefits/Benefits'
 import Hero from '@/components/Landing/Hero/Hero'
 import Navbar from '@/components/Landing/Navbar/Navbar'
+import Numbers from '@/components/Landing/Numbers/Numbers'
+import Steps from '@/components/Landing/Steps/Steps'
+import Footer from '@/components/Landing/Footer/Footer'
 import Head from 'next/head'
 
 export default function Home() {
@@ -14,6 +19,11 @@ export default function Home() {
       <main>
         <Navbar></Navbar>
         <Hero></Hero>
+        <Numbers></Numbers>
+        <AboutUs></AboutUs>
+        <Steps></Steps>
+        <Benefits></Benefits>
+        <Footer></Footer>
       </main>
     </>
   )
