@@ -18,7 +18,7 @@ const Hero = () => {
           </div>
           <div className="flex flex-col items-center text-center lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 md:items-start md:text-left">
             <h1 className="mb-4 text-3xl font-bold text-gray-900 title-font lg:text-xl xl:text-4xl font-lexend">HomeLab - Neka Vaš dom postane pametan</h1>
-            <p className="mb-8 text-lg leading-relaxed font-lexend">Transforming homes into smart and automated spaces with innovative technology and affordable solutions</p>
+            <p className="mb-8 text-lg leading-relaxed font-lexend">Uz naš proizvod Vaš dom postaje pametan u samo 5 jednostavnih koraka.</p>
             <div className="items-end justify-center w-full mb-5 flex-nowrap lg:flex-wrap xl:flex-nowrap lg:flex md:justify-start">
               <div className="w-full mx-auto mr-4 md:mx-1 sm:w-full xl:w-1/2">
                 <label className="text-sm leading-7 text-gray-600 md:mr-0 sm:mr-2 md:pl-2 xl:w-1/2 font-lexend">Prijavite se na naš newsletter.</label>
@@ -32,7 +32,7 @@ const Hero = () => {
                   <path d="M99.617 8.057a50.191 50.191 0 00-38.815-6.713l230.932 230.933 74.846-74.846L99.617 8.057zM32.139 20.116c-6.441 8.563-10.148 19.077-10.148 30.199v411.358c0 11.123 3.708 21.636 10.148 30.199l235.877-235.877L32.139 20.116zM464.261 212.087l-67.266-37.637-81.544 81.544 81.548 81.548 67.273-37.64c16.117-9.03 25.738-25.442 25.738-43.908s-9.621-34.877-25.749-43.907zM291.733 279.711L60.815 510.629c3.786.891 7.639 1.371 11.492 1.371a50.275 50.275 0 0027.31-8.07l266.965-149.372-74.849-74.847z"></path>
                 </svg>
                 <span className="flex flex-col items-start ml-4 leading-none">
-                  <span className="mb-1 text-xs text-gray-600">GET IT ON</span>
+                  <span className="mb-1 text-xs text-gray-600">Skinite aplikaciju na</span>
                   <span className="font-medium title-font">Google Play</span>
                 </span>
               </button>
@@ -42,7 +42,7 @@ const Hero = () => {
                   <path d="M212.1 0c-15.76.64-34.67 10.35-45.97 23.58-9.6 11.13-19 29.68-16.52 48.38a2.5 2.5 0 002.29 2.17c1.06.08 2.15.12 3.23.12 15.41 0 32.04-8.52 43.4-22.25 11.94-14.5 17.99-33.1 16.16-49.77A2.52 2.52 0 00212.1 0z"></path>
                 </svg>
                 <span className="flex flex-col items-start ml-4 leading-none">
-                  <span className="mb-1 text-xs text-gray-600">Download on the</span>
+                  <span className="mb-1 text-xs text-gray-600">Skinite aplikaciju na</span>
                   <span className="font-medium title-font">App Store</span>
                 </span>
               </button>
