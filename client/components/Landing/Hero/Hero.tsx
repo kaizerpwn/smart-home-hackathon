@@ -4,7 +4,6 @@ import { IoIosTime } from "react-icons/io";
 import { BsLightningChargeFill } from "react-icons/bs";
 import { BiWorld } from "react-icons/bi";
 import { imageLoader } from "@/lib/ImageLoader";
-import { fadeInLeft } from 'react-animations' 
 
 const Hero = () => { 
   
