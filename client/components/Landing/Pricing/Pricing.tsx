@@ -6,7 +6,7 @@ const Pricing = () => {
   <div className="container px-5 py-24 mx-auto">
     <div className="flex flex-col w-full mb-20 text-center">
       <h1 className="mb-2 text-3xl font-medium text-gray-900 sm:text-4xl title-font">Cjenovnik</h1>
-      <p className="mx-auto text-base leading-relaxed text-gray-500 lg:w-2/3">Automatizirajte jednu sferu Vašeg života uz HomeLab! Rezervirajte vaš paket već danas </p>
+      <p className="mx-auto text-base leading-relaxed text-gray-500 lg:w-2/3">Automatizirajte jednu sferu Vašeg života uz HomeLab! Rezervišite vaš paket već danas </p>
     </div>
     <div className="flex flex-wrap -m-4">
       <div className="w-full p-4 xl:w-1/3 md:w-1/2">

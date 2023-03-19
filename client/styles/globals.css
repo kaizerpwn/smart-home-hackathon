@@ -8,6 +8,12 @@
   src: url('../public/fonts/Lexend-Regular.ttf');
 }
 
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+}
+
 @layer components {
   .headerBtn {
     background-color: #7d54f8;
