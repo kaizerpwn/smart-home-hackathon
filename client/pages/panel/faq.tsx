@@ -1,4 +1,5 @@
 import Breadcrumb from '@/components/Panel/Breadcrumb/Breadcrumb'
+import Faq from '@/components/Panel/Faq/Faq'
 import PanelLayout from '@/components/Panel/PanelLayout'
 import Head from 'next/head'
 import React from 'react'
@@ -13,7 +14,8 @@ const Dashboard = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
     <PanelLayout>  
-      <Breadcrumb/>
+        <Breadcrumb />
+        <Faq></Faq>
     </PanelLayout>
     </>
   )
