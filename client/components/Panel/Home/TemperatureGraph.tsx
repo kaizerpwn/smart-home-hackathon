@@ -63,7 +63,6 @@ interface WeatherProps {
 }
 
 export default function TemperatureGraph ({ weather }:WeatherProps) { 
-  console.log(weather)
 
   const renderIcon = () => {
     if (weather?.current?.cloud === 0 && weather?.current?.is_day === 1) { 
