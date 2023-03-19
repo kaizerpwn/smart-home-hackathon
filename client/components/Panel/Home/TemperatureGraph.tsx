@@ -30,10 +30,17 @@ import { Weather } from '@/lib/Interfaces/Weather';
   
   export const options = {
     responsive: true,
+    scales: {
+      y: {
+        ticks: { color: '#fff', beginAtZero: true }
+      },
+      x: {
+        ticks: { color: '#fff', beginAtZero: true }
+      }
+    },
     plugins: {
       legend: {
-        labels: {
-            fontColor: '#FFF',
+        labels: { 
             color: '#FFFFFF'
         },
         position: 'top' as const,
@@ -64,6 +71,8 @@ interface WeatherProps {
 
 export default function TemperatureGraph ({ weather }:WeatherProps) { 
 
+  console.log(weather)
+
   const renderIcon = () => {
     if (weather?.current?.cloud === 0 && weather?.current?.is_day === 1) { 
       return <BsFillSunFill className='flex mx-auto mt-12 text-yellow-400 text-9xl' />;
@@ -88,7 +97,9 @@ export default function TemperatureGraph ({ weather }:WeatherProps) {
                 <FaThermometerQuarter className="p-1 text-5xl rounded-full bg-secondaryColor"/>
                 <span className="opacity-50">Temperature po satu</span>
               </div>
-              <Line options={options as ChartOptions} data={data} />
+              <div className="text-white">
+                <Line options={options as ChartOptions} data={data}/>
+              </div>
           </div>
           <div className="xs:w-full sm:w-full lg:w-[32%] p-6 mt-10 text-white bg-gradient-to-r from-gray-500 via-gray-600 to-gray-700 rounded-3xl">
               <div className='flex items-center space-x-2'>
