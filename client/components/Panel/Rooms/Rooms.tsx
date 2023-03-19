@@ -1,6 +1,8 @@
 import { useState } from "react"
 import { FaBed } from "react-icons/fa"
 import { MdCreateNewFolder } from "react-icons/md"
+import {AiOutlinePoweroff} from "react-icons/ai" 
+
 
 const Rooms = () => {
 
@@ -20,6 +22,13 @@ const Rooms = () => {
         
     }
 
+    const rooms = [
+        {prostorija: 'Dnevni boravak'},
+        {prostorija: 'Spavaća soba'},
+        {prostorija: 'Kupatilo'},
+      ];
+
+
     return (
         <>
             <div className="flex flex-col text-white bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600 rounded-xl">
@@ -38,13 +47,24 @@ const Rooms = () => {
                                 <tr> 
                                     <th scope="col" className="px-6 py-4">Ime uređaja</th>
                                     <th scope="col" className="px-6 py-4">Kategorija</th>
-                                    <th scope="col" className="px-6 py-4">Status</th>
                                     <th scope="col" className="px-6 py-4">Prostorija</th>
                                     <th scope="col" className="px-6 py-4">Akcije</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                    
+                            {rooms.map((room, index)=>(
+                                    <tr className="transition duration-300 ease-in-out border-b hover:bg-gradient-to-r hover:from-gray-700 hover:via-gray-600 hover:to-gray-500" key={index}>
+                                        <td className="px-6 py-4 whitespace-nowrap">{room.prostorija}</td>
+                                        <td className="px-6 py-4 whitespace-nowrap">{room.prostorija}</td>
+                                        <td className="px-6 py-4 whitespace-nowrap"> 
+                                        </td>
+                                        <td className="px-6 py-4 whitespace-nowrap">{room.prostorija}</td>
+                                        <td className="px-6 py-4 space-x-2 whitespace-nowrap">
+                                            <button type="button" className="px-4 py-2 font-semibold text-white duration-200 ease-in bg-blue-500 rounded hover:bg-blue-600" onClick={handleModal}>Kontrola</button>
+                                            <button type="button" className="px-4 py-2 font-semibold text-white duration-200 ease-in bg-red-500 rounded hover:bg-red-600">Izbriši</button>
+                                        </td>
+                                    </tr> 
+                                ))}   
                             </tbody>
                         </table>
                     </div>
