@@ -6,7 +6,7 @@ export interface User extends Session {
     id?: number; 
     ime?: string;
     prezime?: string; 
-    grad?: string; 
+    grad?: string | undefined | null; 
     iat?: number;
     exp?: number;
     jti?: string;

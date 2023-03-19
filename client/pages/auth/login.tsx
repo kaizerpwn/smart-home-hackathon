@@ -1,13 +1,14 @@
 
 import Head from 'next/head' 
 import { useSession, signIn, signOut } from "next-auth/react"
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { getCsrfToken } from "next-auth/react"
 import type { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
 import { getServerSession } from 'next-auth'
 import options from "../api/auth/[...nextauth]";
 import { imageLoader } from '@/lib/ImageLoader'
 import Image from 'next/image';
+import Link from 'next/link';
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
     const session = await getServerSession(context.req, context.res, options);
@@ -35,7 +36,10 @@ export default function Login({ csrfToken }: InferGetServerSidePropsType<typeof 
         signIn("credentials", { email: texts.email, password: texts.password, callbackUrl: '/panel' });
     }
 
-    const { data: session } = useSession()
+    const handleEnter = (e:React.KeyboardEvent) => {
+        if(e.keyCode === 13) handleSignIn();
+    }
+
     return (
         <>
             <Head>
@@ -48,6 +52,9 @@ export default function Login({ csrfToken }: InferGetServerSidePropsType<typeof 
                 <div className="w-full max-w-md p-4 mx-auto rounded-md shadow sm:p-8 dark:bg-gray-700 dark:text-gray-100"> 
                     <Image loader={imageLoader} className="flex justify-center object-cover object-center mx-auto rounded-3xl" alt="HomeLab logotype on sign in page" src={`/images/logo.png`} width={300} height={200} />
                     <h2 className="mb-3 text-3xl font-semibold text-center">Prijavite se</h2> 
+                    <p className="text-sm text-center dark:text-gray-400">Ne posjedujete račun?
+                        <Link href="/auth/register" rel="noopener noreferrer" className="focus:underline hover:underline"> Registrujte se</Link>
+                    </p>
                     <div className="flex items-center w-full my-4"> 
                     </div>
                     <form className="space-y-8 ng-untouched ng-pristine ng-valid">
@@ -55,14 +62,14 @@ export default function Login({ csrfToken }: InferGetServerSidePropsType<typeof 
                         <div className="space-y-4">
                             <div className="space-y-2">
                                 <label className="block text-sm">Email adresa</label>
-                                <input type="email" name="email" id="email" placeholder="vasemail@homelab.com" value={texts.email} onChange={handleChange} className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 focus:dark:border-violet-400" />
+                                <input type="email" name="email" id="email" placeholder="vasemail@homelab.com" onKeyDown={handleEnter} value={texts.email} onChange={handleChange} className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 focus:dark:border-violet-400" />
                             </div>
                             <div className="space-y-2">
                                 <div className="flex justify-between">
                                     <label className="text-sm">Lozinka</label>
                                     <a rel="noopener noreferrer" href="#" className="text-xs hover:underline dark:text-gray-400">Zaboravili ste lozinku?</a>
                                 </div>
-                                <input type="password" name="password" id="password" placeholder="********" value={texts.password} onChange={handleChange} className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 focus:dark:border-violet-400" />
+                                <input type="password" name="password" id="password" placeholder="********" onKeyDown={handleEnter} value={texts.password} onChange={handleChange} className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 focus:dark:border-violet-400" />
                             </div>
                         </div>
                         <button type="button" className="w-full px-8 py-3 font-semibold duration-500 rounded-md dark:bg-violet-400 dark:text-gray-800 hover:bg-secondaryColor" onClick={handleSignIn}>Prijavite se</button>

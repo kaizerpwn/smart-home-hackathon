@@ -1,20 +1,23 @@
-import axios, { AxiosInstance, AxiosResponse } from "axios";
-import { Rooms } from "./Interfaces/Rooms";
-
-declare module "axios" {
-  interface AxiosInstance {
-    getRooms(): Promise<AxiosResponse<Rooms[]>>;
-  }
-}
+import axios from "axios"; 
 
 export default class Axios {
-  public static makeRequest: AxiosInstance = axios.create({
-    baseURL: process.env.BACKEND_URL,
-    withCredentials: true,
-  });
+    public static makeRequest = axios.create({
+        baseURL: process.env.BACKEND_URL,
+        withCredentials: true,
+    }); 
 
-  public static async getRooms(): Promise<Rooms[]> {
-    const res = await Axios.makeRequest.getRooms();
-    return res.data;
-  }
-}
+    public async getRooms() {
+        const res = await Axios.makeRequest.get('/analytics/rooms')
+        return res.data;
+    } 
+
+    public async getDevices() {
+        const res = await Axios.makeRequest.get('/analytics/devices')
+        return res.data;
+    } 
+
+    public async getActiveDevices() {
+        const res = await Axios.makeRequest.get('/analytics/activedevices')
+        return res.data;
+    } 
+} 

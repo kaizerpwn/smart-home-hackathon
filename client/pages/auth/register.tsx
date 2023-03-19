@@ -9,6 +9,7 @@ import options from "../api/auth/[...nextauth]";
 import { imageLoader } from '@/lib/ImageLoader'
 import Image from 'next/image';
 import Axios from '@/lib/Axios';
+import Link from 'next/link';
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
     const session = await getServerSession(context.req, context.res, options);
@@ -50,7 +51,9 @@ export default function Login({ csrfToken }: InferGetServerSidePropsType<typeof 
             })
     }
 
-    const { data: session } = useSession()
+    const handleEnter = (e:React.KeyboardEvent) => {
+        if(e.keyCode === 13) handleRegister();
+    }
     
     return (
         <>
@@ -63,27 +66,30 @@ export default function Login({ csrfToken }: InferGetServerSidePropsType<typeof 
             <main className='flex items-center justify-center' style={{ height: "100vh" }}>
                 <div className="w-full max-w-md p-4 mx-auto rounded-md shadow sm:p-8 dark:bg-gray-700 dark:text-gray-100"> 
                     <Image loader={imageLoader} className="flex justify-center object-cover object-center mx-auto rounded-3xl" alt="HomeLab logotype on sign in page" src={`/images/logo.png`} width={300} height={200} />
-                    <h2 className="mb-3 text-3xl font-semibold text-center">Registrujte se</h2>  
+                    <h2 className="text-3xl font-semibold text-center ">Registrujte se</h2>  
+                    <p className="text-sm text-center dark:text-gray-400">Već posjedujete račun?
+                        <Link href="/auth/login" rel="noopener noreferrer" className="focus:underline hover:underline"> Prijavite se</Link>
+                    </p>
                     <form className="space-y-8 ng-untouched ng-pristine ng-valid">
                         <input name="csrfToken" type="hidden" defaultValue={csrfToken} />
-                        <div className="space-y-4">
+                        <div className="space-y-3">
                             <div className="space-y-2">
                                 <label className="block text-sm">Ime</label>
-                                <input type="text" name="name" id="name" placeholder="Unesite Vaše ime.." value={texts.name} onChange={handleChange} className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 focus:dark:border-violet-400" />
+                                <input type="text" name="name" id="name" onKeyDown={handleEnter} placeholder="Unesite Vaše ime.." value={texts.name} onChange={handleChange} className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 focus:dark:border-violet-400" />
                             </div>
                             <div className="space-y-2">
                                 <label className="block text-sm">Prezime</label>
-                                <input type="email" name="surname" id="surname" placeholder="Unesite Vaše prezime.." value={texts.surname} onChange={handleChange} className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 focus:dark:border-violet-400" />
+                                <input type="email" name="surname" id="surname" onKeyDown={handleEnter} placeholder="Unesite Vaše prezime.." value={texts.surname} onChange={handleChange} className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 focus:dark:border-violet-400" />
                             </div>
                             <div className="space-y-2">
                                 <label className="block text-sm">Email adresa</label>
-                                <input type="email" name="email" id="email" placeholder="vasemail@homelab.com" value={texts.email} onChange={handleChange} className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 focus:dark:border-violet-400" />
+                                <input type="email" name="email" id="email" onKeyDown={handleEnter} placeholder="vasemail@homelab.com" value={texts.email} onChange={handleChange} className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 focus:dark:border-violet-400" />
                             </div>
                             <div className="space-y-2">
                                 <div className="flex justify-between">
                                     <label className="text-sm">Lozinka</label>
                                 </div>
-                                <input type="password" name="password" id="password" placeholder="********" value={texts.password} onChange={handleChange} className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 focus:dark:border-violet-400" />
+                                <input type="password" name="password" id="password" onKeyDown={handleEnter} placeholder="********" value={texts.password} onChange={handleChange} className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 focus:dark:border-violet-400" />
                             </div>
                             <div className="space-y-2">
                                 <div className="flex justify-between">

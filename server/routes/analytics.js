@@ -1,8 +1,10 @@
-import { getRooms } from "../controllers/analytics.js";
+import { getRooms, getDevices, getActiveDevices } from "../controllers/analytics.js";
 import express from "express"
 
 const router = express.Router();
 
-router.post('/rooms', getRooms) 
+router.get('/rooms', getRooms) 
+router.get('/devices', getDevices) 
+router.get('/activedevices', getActiveDevices) 
 
 export default router;

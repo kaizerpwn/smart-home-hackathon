@@ -2,6 +2,7 @@ import Breadcrumb from '@/components/Panel/Breadcrumb/Breadcrumb'
 import CurrentStats from '@/components/Panel/Home/CurrentStats'
 import TemperatureGraph from '@/components/Panel/Home/TemperatureGraph'
 import PanelLayout from '@/components/Panel/PanelLayout' 
+import { User } from '@/lib/Interfaces/User'
 import { Weather } from '@/lib/Interfaces/Weather'
 import { WeatherAPI } from '@/lib/WeatherAPI' 
 import { useSession } from 'next-auth/react'
@@ -9,19 +10,18 @@ import Head from 'next/head'
 import { useEffect, useState } from 'react'
 
 const Dashboard = () => {
-  const { data: session, status } = useSession(); 
- 
+  const { data: session, status } = useSession();  
+  const user: User | undefined | null = session;
   const [weatherInfo, setWeatherInfo] = useState<Weather | undefined>(); 
   
   useEffect(() => {
     const getWeatherInfo = async () => {
-      const weatherInstance = new WeatherAPI('Mostar');
+      const weatherInstance = new WeatherAPI(user?.grad);
       const info = await weatherInstance.getLocationInfo();
       setWeatherInfo(info);
     }; 
-
-    getWeatherInfo(); 
-  }, []);
+    if(user) getWeatherInfo();  
+  }, [user]);
 
   if (weatherInfo === null) {
     return <div>Loading...</div>;
