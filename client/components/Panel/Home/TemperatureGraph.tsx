@@ -9,7 +9,6 @@ import {
     Tooltip,
     Filler,
     Legend,
-    ChartOptions,
   } from 'chart.js';
 import {FaThermometerQuarter} from "react-icons/fa"
 import {BsThermometerSun} from "react-icons/bs"
