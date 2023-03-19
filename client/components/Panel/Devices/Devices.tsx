@@ -1,14 +1,31 @@
 import { useState } from "react";
 import {AiOutlinePoweroff} from "react-icons/ai" 
-import { TbDevicesPc } from "react-icons/tb";
-import { FaBed } from "react-icons/fa"
+import { TbDevicesPc } from "react-icons/tb"; 
 import { MdCreateNewFolder } from "react-icons/md"
+import Axios from "@/lib/Axios";
+import { User } from "@/lib/Interfaces/User";
+import { useSession } from "next-auth/react"; 
+import { QueryClient, QueryKey, useQuery } from "@tanstack/react-query";  
+import { DeviceProps } from "@/pages/panel/uredjaji";
+import { DeviceMutations } from "@/lib/Mutations/DeviceMutations";
+import DevicesInterface from "@/lib/Interfaces/Devices";
 
-const Devices = () => {   
+const DEVICES_QUERY_KEY: QueryKey = ['devices'];
+const AxiosInstance = new Axios();
+export const queryClient = new QueryClient(); 
 
+
+const Devices = ({ devices }: DeviceProps) => {
+    const deviceMutate = new DeviceMutations();
+    const [deviceState,setDeviceState] = useState({}); 
     
-    const [modalState, setModalState] = useState<boolean>(false);
-
+    const { data: allDevices, isLoading, isError } = useQuery(DEVICES_QUERY_KEY, AxiosInstance.getAllDevices, {
+        initialData: devices,
+    });
+    
+    const { data: session, status } = useSession();
+    const user: User | undefined | null = session;
+    const [modalState, setModalState] = useState<boolean>(false); 
     const [texts, setTexts] = useState({
         name:''
     })
@@ -21,39 +38,36 @@ const Devices = () => {
 
     const AddRoom = () => {
         
-    }
+    } 
 
     const rooms = [
         {prostorija: 'Dnevni boravak'},
         {prostorija: 'Spavaća soba'},
         {prostorija: 'Kupatilo'},
-      ];
-
-    const [devices, setDevices] = useState([
-        {
-            id:0,
-            ime: "Smart TV - Samsung",
-            kategorija: "TV Uređaji",
-            prostorija: "Dnevni boravak",
-            status: false
-        },
-        {
-            id:1,
-            ime: "Frižider - Telefunken",
-            kategorija: "Frižideri",
-            prostorija: "Kuhinja",
-            status: true
-        }
-    ]); 
-    
-    const handleSwitcher = (id:number) => {
-        setDevices(prevDevices => {
-          const newDevices = [...prevDevices];
-          newDevices[id] = { ...newDevices[id], status: !newDevices[id].status };
-          return newDevices;
-        });
-      }
+    ]; 
       
+    let [device, setDevice] = useState<DevicesInterface>(allDevices);
+    
+    const updateDeviceStatus = (id: number, status: boolean) => {
+        setDevice({ ...device, id: id, status: status });
+    };
+
+    console.log(device)
+    
+    const handleSwitcher = async (id: number) => {
+        console.log(id-1)
+        updateDeviceStatus(id-1, !allDevices[id-1].status)
+        // await deviceMutate.editDevice.mutateAsync(allDevices);
+    }
+      
+    
+    if (isLoading) {
+        return <div>Loading...</div>;
+    }
+
+    if (isError) {
+        return <div>Error loading data</div>;
+    }
 
     return (
         <>
@@ -76,7 +90,7 @@ const Devices = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {devices.map((device)=>(
+                                {allDevices.map((device:DevicesInterface)=>(
                                     <tr className="transition duration-300 ease-in-out border-b hover:bg-gradient-to-r hover:from-gray-700 hover:via-gray-600 hover:to-gray-500" key={device.id}>
                                         <td className="px-6 py-4 whitespace-nowrap">{device.ime}</td>
                                         <td className="px-6 py-4 whitespace-nowrap">{device.kategorija}</td>
@@ -84,7 +98,7 @@ const Devices = () => {
                                             <button className="flex items-center w-12 h-6 transition duration-300 bg-white rounded-full shadow focus:outline-none">
                                                 <div
                                                     id="switch-toggle"
-                                                    onClick={()=> {handleSwitcher(device.id)}}
+                                                    onClick={()=> {handleSwitcher(device.id as number)}}
                                                     className={device.status ? 
                                                             (
                                                                 "relative w-7 h-7 p-1 text-white transition duration-500 transform -translate-x-2 bg-red-500 rounded-full" 

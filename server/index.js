@@ -9,6 +9,8 @@ const app = express();
 // >> Controllers
 import userRoutes from "./routes/user.js" 
 import analyticsRoutes from "./routes/analytics.js" 
+import deviceRoutes from "./routes/devices.js" 
+import roomRoutes from "./routes/rooms.js" 
 
 
 // >> Middlewares
@@ -21,6 +23,8 @@ app.use(express.json())
 
 // >> API Routes
 app.use('/api/analytics', analyticsRoutes); 
+app.use('/api/devices', deviceRoutes); 
+app.use('/api/rooms', roomRoutes); 
 app.use('/api/user', userRoutes); 
   
 
