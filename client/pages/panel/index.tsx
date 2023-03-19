@@ -30,7 +30,6 @@ const Dashboard = () => {
   const weatherData: Weather = {
     current: weatherInfo?.current
   };
-  console.log(session)
 
   if (status === 'loading') {
       return <div>Loading</div>

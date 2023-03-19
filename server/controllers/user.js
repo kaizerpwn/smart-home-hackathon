@@ -44,7 +44,7 @@ export const loginUser = (req, res) => {
                 } else if (!isMatch) {
                     return res.status(404).json('Password is not valid.');
                 } else {
-                    const { password, ...other } = data[0];
+                    const { lozinka, ...other } = data[0];
                     return res.status(200).json(other);
                 }
             })
