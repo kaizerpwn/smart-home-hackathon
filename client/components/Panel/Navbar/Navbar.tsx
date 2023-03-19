@@ -10,6 +10,7 @@ import {IoMdClose} from "react-icons/io"
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import { imageLoader } from '@/lib/ImageLoader';
+import { signOut } from 'next-auth/react';
 
 const Navbar = () => {
     const router = useRouter();
@@ -59,14 +60,14 @@ const Navbar = () => {
                             </div>
                         </li>
                     </Link>
-                    <Link href="/">
+                    <div onClick={() => signOut({ callbackUrl: "/auth/login" })}>
                         <li className={router.pathname === '/' ? "flex items-center justify-between w-full px-4 py-2 mb-3 text-gray-100 duration-100 ease-in cursor-pointer rounded-xl hover:bg-secondaryColor bg-secondaryColor" : "flex items-center justify-between w-full px-4 py-2 mb-3 text-gray-100 duration-100 ease-in cursor-pointer rounded-xl hover:bg-secondaryColor"}>
                             <div className="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
                                     <ImExit className="w-6 h-6"/>
                                     <span className="ml-2 text-md">Odjava</span>
                             </div>
                         </li> 
-                    </Link>
+                    </div>
                 </ul> 
             </div> 
         </div>
