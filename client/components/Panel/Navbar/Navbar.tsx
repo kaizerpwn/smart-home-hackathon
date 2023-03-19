@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Link from 'next/link';
 import {AiFillHome} from "react-icons/ai"
-import {BsCameraReelsFill} from "react-icons/bs"
+import {BiDevices} from "react-icons/bi"
 import {MdBedroomChild} from "react-icons/md"
 import {FaQuestionCircle} from "react-icons/fa"
 import {ImExit} from "react-icons/im"
@@ -38,7 +38,7 @@ const Navbar = () => {
                     <Link href="/panel/uredjaji">
                         <li className={router.pathname === '/panel/uredjaji' ? "flex items-center justify-between w-full px-4 py-2 mb-3 text-gray-100 duration-100 ease-in cursor-pointer rounded-xl hover:bg-secondaryColor bg-secondaryColor" : "flex items-center justify-between w-full px-4 py-2 mb-3 text-gray-100 duration-100 ease-in cursor-pointer rounded-xl hover:bg-secondaryColor"}>
                             <div className="flex items-center focus:outline-none focus:ring-2 focus:ring-white"> 
-                                <BsCameraReelsFill className="w-6 h-6"/>
+                                <BiDevices className="w-6 h-6"/>
                                 <span className="ml-2 text-md">Uređaji</span>
                             </div>
                         </li>
@@ -52,7 +52,7 @@ const Navbar = () => {
                         </li>
                     </Link>
                     <Link href="/panel/faq">
-                        <li className={router.pathname === '/panel/faq' ? "flex items-center justify-between w-full px-4 py-2 mb-3 text-gray-100 duration-100 ease-in cursor-pointer rounded-xl hover:bg-primaryColor bg-primaryColor" : "flex items-center justify-between w-full px-4 py-2 mb-3 text-gray-100 duration-100 ease-in cursor-pointer rounded-xl hover:bg-primaryColor"}>
+                        <li className={router.pathname === '/panel/faq' ? "flex items-center justify-between w-full px-4 py-2 mb-3 text-gray-100 duration-100 ease-in cursor-pointer rounded-xl hover:bg-secondaryColor bg-secondaryColor" : "flex items-center justify-between w-full px-4 py-2 mb-3 text-gray-100 duration-100 ease-in cursor-pointer rounded-xl hover:bg-secondaryColor"}>
                             <div className="flex items-center focus:outline-none focus:ring-2 focus:ring-white" >
                                 <FaQuestionCircle className="w-6 h-6"/>
                                 <span className="ml-2 text-md">FAQ</span>
@@ -60,7 +60,7 @@ const Navbar = () => {
                         </li>
                     </Link>
                     <Link href="/">
-                        <li className={router.pathname === '/' ? "flex items-center justify-between w-full px-4 py-2 mb-3 text-gray-100 duration-100 ease-in cursor-pointer rounded-xl hover:bg-primaryColor bg-primaryColor" : "flex items-center justify-between w-full px-4 py-2 mb-3 text-gray-100 duration-100 ease-in cursor-pointer rounded-xl hover:bg-primaryColor"}>
+                        <li className={router.pathname === '/' ? "flex items-center justify-between w-full px-4 py-2 mb-3 text-gray-100 duration-100 ease-in cursor-pointer rounded-xl hover:bg-secondaryColor bg-secondaryColor" : "flex items-center justify-between w-full px-4 py-2 mb-3 text-gray-100 duration-100 ease-in cursor-pointer rounded-xl hover:bg-secondaryColor"}>
                             <div className="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
                                     <ImExit className="w-6 h-6"/>
                                     <span className="ml-2 text-md">Odjava</span>
@@ -110,7 +110,7 @@ const Navbar = () => {
                     <Link href="/panel/uredjaji">
                         <li className={router.pathname === '/panel/uredjaji' ? "flex items-center justify-between w-full px-4 py-2 mb-6 font-bold text-gray-100 duration-100 ease-in cursor-pointer rounded-xl hover:bg-primaryColor bg-primaryColor" : "flex items-center justify-between w-full px-4 py-2 mb-6 font-bold text-gray-100 duration-100 ease-in cursor-pointer rounded-xl hover:bg-primaryColor"}>
                             <div className="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
-                                    <BsCameraReelsFill className="w-6 h-6"/>
+                                    <BiDevices className="w-6 h-6"/>
                                     <span className="ml-2 text-sm">Uređaji</span>
                             </div> 
                         </li>
