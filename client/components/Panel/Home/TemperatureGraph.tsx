@@ -56,7 +56,7 @@ import { Weather } from '@/lib/Interfaces/Weather';
       {
         fill: true,
         label: 'Temperature po satu',
-        data: [1,2,3,4,5,6,7,8,9,2,11,12,13,14,15,3,17,18,19,12,4,22,1],
+        data: [1,2,3,4,5,6,7,8,9,2,11,12,13,14,15,3,17,18,19,12,4,22,1,12],
         borderColor: '#A78BFA',
         backgroundColor: 'rgba(167, 139, 250, 0.5)',
         fontColor : '#FFFFFF',
@@ -69,9 +69,7 @@ interface WeatherProps {
   weather : Weather | undefined;
 }
 
-export default function TemperatureGraph ({ weather }:WeatherProps) { 
-
-  console.log(weather)
+export default function TemperatureGraph ({ weather }:WeatherProps) {  
 
   const renderIcon = () => {
     if (weather?.current?.cloud === 0 && weather?.current?.is_day === 1) { 
@@ -86,8 +84,7 @@ export default function TemperatureGraph ({ weather }:WeatherProps) {
     else if (weather?.current?.cloud !== 0 && weather?.current?.is_day === 0) { 
       return <BsFillCloudMoonFill className='flex mx-auto mt-12 text-white text-9xl' />;
     }
-  };
-  
+  }; 
 
   return (
     <>
@@ -98,7 +95,7 @@ export default function TemperatureGraph ({ weather }:WeatherProps) {
                 <span className="opacity-50">Temperature po satu</span>
               </div>
               <div className="text-white">
-                <Line options={options as ChartOptions} data={data}/>
+                <Line options={options} data={data}/>
               </div>
           </div>
           <div className="xs:w-full sm:w-full lg:w-[32%] p-6 mt-10 text-white bg-gradient-to-r from-gray-500 via-gray-600 to-gray-700 rounded-3xl">
