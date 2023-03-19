@@ -10,11 +10,11 @@ Kreirajte databazu sa istim imenom, bez ikakve lozinke i `root` korisnikom
 # Podešavanje databaze :
 Ukoliko koristite phpmyadmin možete preuzeti `SQL datoteku` i kreirati databazu sa imenom `smarthome` i onda klikom na tu databazu i dugme `IMPORT`
 
-# Predstavljeno na slici :
+# 📚 Predstavljeno na slici :
 ![Screenshot_1](https://user-images.githubusercontent.com/81625008/226169272-14142a59-e024-44a9-8302-9e6113f9022e.png)
 
 
-# Podešavanje server strane :
+# 💻 Podešavanje server strane :
 `cd server`
 
 `npm install`
@@ -23,7 +23,7 @@ Nakon što se preuzmu sve potrebne biblioteke isti projekat pokrećete sa komand
 
 `npm start`
 
-# Podešavanje klijent strane :
+# 📱 Podešavanje klijent strane :
 `cd client`
 
 `npm install`
