@@ -25,9 +25,9 @@ const Rooms = () => {
     }
 
     const rooms = [
-        {sprat: '2',prostorija: 'Dnevni boravak', uredaj:'Klima Telefunken'},
-        {sprat: '3',prostorija: 'Spavaća soba', uredaj:'LED TV LG 42"'},
-        {sprat: '1',prostorija: 'Kupatilo', uredaj:'Grijalica VIVAX'},
+        {sprat: '2',prostorija: 'Dnevni boravak', brojUredaja:'5'},
+        {sprat: '3',prostorija: 'Spavaća soba', brojUredaja:'6'},
+        {sprat: '1',prostorija: 'Kupatilo', brojUredaja:'2'},
       ];
 
 
@@ -47,18 +47,18 @@ const Rooms = () => {
                         <table className="min-w-full text-sm font-light text-left">
                             <thead className="font-medium border-b dark:border-neutral-500">
                                 <tr> 
-                                    <th scope="col" className="px-6 py-4">Ime uređaja</th>
-                                    <th scope="col" className="px-6 py-4">Sprat</th>
                                     <th scope="col" className="px-6 py-4">Prostorija</th>
+                                    <th scope="col" className="px-6 py-4">Broj uređaja</th>
+                                    <th scope="col" className="px-6 py-4">Sprat</th>
                                     <th scope="col" className="px-6 py-4">Akcije</th>
                                 </tr>
                             </thead>
                             <tbody>
                             {rooms.map((room, index)=>(
                                     <tr className="transition duration-300 ease-in-out border-b hover:bg-gradient-to-r hover:from-gray-700 hover:via-gray-600 hover:to-gray-500" key={index}>
-                                        <td className="px-6 py-4 whitespace-nowrap">{room.uredaj}</td>
-                                        <td className="px-6 py-4 whitespace-nowrap">{room.sprat}</td>
                                         <td className="px-6 py-4 whitespace-nowrap">{room.prostorija}</td>
+                                        <td className="px-6 py-4 whitespace-nowrap">{room.brojUredaja}</td>
+                                        <td className="px-6 py-4 whitespace-nowrap">{room.sprat}</td>
                                         <td className="px-6 py-4 space-x-2 whitespace-nowrap">
                                             <button type="button" className="px-4 py-2 font-semibold text-white duration-200 ease-in bg-blue-500 rounded hover:bg-blue-600" onClick={handleEditModal}>Kontrola</button>
                                             <button type="button" className="px-4 py-2 font-semibold text-white duration-200 ease-in bg-red-500 rounded hover:bg-red-600">Izbriši</button>
@@ -111,9 +111,9 @@ const Rooms = () => {
                                 <form className="space-y-6" action="#"> 
                                     <div>
                                         <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Novo ime prostorije:</label>
-                                        <input type="text" name="name" id="name" value={texts.name} onChange={handleChange} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Ime prostorije" required />
-                                        <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Novo ime prostorije:</label>
-                                        <input type="text" name="name" id="name" value={texts.name} onChange={handleChange} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Ime prostorije" required />
+                                        <input type="text" name="name" id="name" value={texts.name} onChange={handleChange} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Novo ime prostorije" required />
+                                        <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Novi sprat prostorije:</label>
+                                        <input type="text" name="name" id="name" value={texts.name} onChange={handleChange} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Novi sprat prostorije" required />
                                     </div> 
                                     <button type="submit" className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-secondaryColor dark:hover:bg-primaryColor duration-500" onClick={AddRoom}>Uredi</button>
                                 </form>
