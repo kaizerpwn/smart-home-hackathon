@@ -16,7 +16,7 @@ const Hero = () => {
     </div>
     <div className="flex flex-col items-center text-center lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 md:items-start md:text-left">
       <h1 className="mb-4 text-3xl font-bold text-gray-900 title-font lg:text-xl xl:text-4xl font-lexend">HomeLab - Neka Vaš dom postane pametan</h1>
-      <p className="mb-8 text-lg leading-relaxed font-lexend">Transforming homes into smart and automated spaces with innovative technology and affordable solutions</p>
+      <p className="mb-8 text-lg leading-relaxed font-lexend">Pretvorite Vaš dom u pametan još danas uz pristupačan HomeLab proizvod.</p>
       <div className="items-end justify-center w-full mb-5 flex-nowrap lg:flex-wrap xl:flex-nowrap lg:flex md:justify-start">
         <div className="w-full mx-auto mr-4 md:mx-1 sm:w-full xl:w-1/2">
           <label className="text-sm leading-7 text-gray-600 md:mr-0 sm:mr-2 md:pl-2 xl:w-1/2 font-lexend">Prijavite se na naš newsletter.</label>

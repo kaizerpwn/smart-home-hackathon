@@ -6,6 +6,7 @@ import Steps from '@/components/Landing/Setup/Setup'
 import Footer from '@/components/Landing/Footer/Footer'
 import Head from 'next/head'
 import Contact from '@/components/Landing/Contact/Contact'
+import Pricing from '@/components/Landing/Pricing/Pricing'
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
         <AboutUs></AboutUs>
         <Benefits></Benefits>
         <Steps></Steps>
+        <Pricing></Pricing>
         <Contact></Contact>
         <Footer></Footer>
       </main>
