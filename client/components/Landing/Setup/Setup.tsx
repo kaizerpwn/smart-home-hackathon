@@ -4,7 +4,8 @@ const Steps = () => {
 
     const imageLoader = ({ src }: ImageLoaderProps) => {
         return src;
-    }
+  }
+  
 
   return (
     <section className="pb-40 text-gray-600 body-font font-lexend" id="instalacija">

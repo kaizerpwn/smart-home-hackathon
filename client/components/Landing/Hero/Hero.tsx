@@ -3,18 +3,30 @@ import { FaMedal } from "react-icons/fa";
 import { IoIosTime } from "react-icons/io";
 import { BsLightningChargeFill } from "react-icons/bs";
 import { BiWorld } from "react-icons/bi";
-import { imageLoader } from "@/lib/ImageLoader";
+import { imageLoader } from "@/lib/ImageLoader"; 
+import { useSpring, config, animated } from 'react-spring';
+
 
 const Hero = () => { 
-  
 
+  const springs = useSpring({
+    from: { x: -2000 },
+    to: { x: 0 },
+    config: { duration: 1200 },
+  });
+
+  const springsTwo = useSpring({
+    from: { x: 2000 },
+    to: { x: 0 },
+    config: { duration: 1200 },
+  });
 
   return (
       <section className="text-gray-600 body-font font-lexend" id="pocetna">
-        <div className="container flex flex-col items-center px-5 py-24 mx-auto md:flex-row">
-          <div className="w-5/6 mb-10 lg:max-w-3xl lg:w-full md:w-full md:mb-0">
-            <Image loader={imageLoader} className="object-cover object-center rounded-3xl" alt="hero image smart home" src={`images/Landing/hero.png`} width={1000} height={600} />
-          </div>
+      <animated.div style={{...springs}} className="container flex flex-col items-center px-5 py-24 mx-auto md:flex-row"> 
+            <div className="w-5/6 mb-10 lg:max-w-3xl lg:w-full md:w-full md:mb-0">
+              <Image loader={imageLoader} className="object-cover object-center rounded-3xl" alt="hero image smart home" src={`images/Landing/hero.png`} width={1000} height={600} />
+            </div> 
           <div className="flex flex-col items-center text-center lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 md:items-start md:text-left">
             <h1 className="mb-4 text-3xl font-bold text-gray-900 title-font lg:text-xl xl:text-4xl font-lexend">HomeLab - Neka Vaš dom postane pametan</h1>
             <p className="mb-8 text-lg leading-relaxed font-lexend">Uz naš proizvod Vaš dom postaje pametan u samo 5 jednostavnih koraka.</p>
@@ -47,8 +59,8 @@ const Hero = () => {
               </button>
             </div>
           </div>
-            </div>
-            <div className="container px-5 py-24 mx-auto">
+            </animated.div>
+            <animated.div style={{...springsTwo}} className="container px-5 py-24 mx-auto">
           <div className="flex flex-wrap justify-between -m-4 text-center">
             <div className="w-1/2 p-4 space-y-5 md:w-1/5 rounded-3xl">
               <FaMedal className="mx-auto text-5xl text-secondaryColor"></FaMedal>
@@ -73,7 +85,7 @@ const Hero = () => {
                   <p className="text-black"> Instalacija bez potrebe za dugotrajnim postupkom instalacije ili podešavanja s minimalnim naporom i bez tehničkog znanja.</p>
             </div>
           </div>
-        </div>
+        </animated.div>
       </section>
   )
 }

@@ -4,6 +4,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100&display=swap');
 
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+}
+
 @layer components {
   .headerBtn {
     background-color: #7d54f8;
