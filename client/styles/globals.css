@@ -122,6 +122,7 @@
   transition: all 0.5s;
 }
 
+#pocetnaSekcija::-webkit-scrollbar,
 #prostorije::-webkit-scrollbar,
 #uredjaji::-webkit-scrollbar {
   display: none;

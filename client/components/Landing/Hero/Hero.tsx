@@ -23,7 +23,7 @@ const Hero = () => {
 
   return (
       <section className="text-gray-600 body-font font-lexend" id="pocetna">
-      <animated.div style={{...springs}} className="container flex flex-col items-center px-5 py-24 mx-auto md:flex-row"> 
+      <animated.div style={{...springs}} className="container flex flex-col items-center px-5 py-24 mx-auto md:flex-row" id="pocetnaSekcija"> 
             <div className="w-5/6 mb-10 lg:max-w-3xl lg:w-full md:w-full md:mb-0">
               <Image loader={imageLoader} className="object-cover object-center rounded-3xl" alt="hero image smart home" src={`images/Landing/hero.png`} width={1000} height={600} />
             </div> 
