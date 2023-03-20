@@ -18,6 +18,8 @@ export const queryClient = new QueryClient();
 const Devices = ({ devices }: DeviceProps) => {
     const deviceMutate = new DeviceMutations();
     const [deviceState,setDeviceState] = useState({}); 
+
+    const [currentSwitchState, setCurrentSwitchState] = useState<DeviceProps>();
     
     const { data: allDevices, isLoading, isError } = useQuery(DEVICES_QUERY_KEY, AxiosInstance.getAllDevices, {
         initialData: devices,
@@ -48,16 +50,14 @@ const Devices = ({ devices }: DeviceProps) => {
       
     let [device, setDevice] = useState<DevicesInterface>(allDevices);
     
-    const updateDeviceStatus = (id: number, status: boolean) => {
+    function updateDeviceStatus (id: number, status: boolean) {
         setDevice({ ...device, id: id, status: status });
     };
 
     console.log(device)
     
-    const handleSwitcher = async (id: number) => {
-        console.log(id-1)
-        updateDeviceStatus(id-1, !allDevices[id-1].status)
-        // await deviceMutate.editDevice.mutateAsync(allDevices);
+    async function handleSwitcher (id: number) { 
+        updateDeviceStatus(id-1, true) 
     }
       
     

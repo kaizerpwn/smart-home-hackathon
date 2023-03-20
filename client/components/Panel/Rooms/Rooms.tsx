@@ -31,12 +31,12 @@ const Rooms = () => {
 
     const [texts, setTexts] = useState({
         prostorija:'',
-        sprat:0
+        sprat:1
     })
 
     const handleModal = () => {
-        setTexts({prostorija:'', sprat:0})
-        setModalState(!modalState);  
+        setTexts({prostorija:'', sprat:1})
+        setModalState(!modalState);
     }
 
     const handleEditModal = (id: number) => {
@@ -52,9 +52,16 @@ const Rooms = () => {
     }
 
     const AddRoom = () => {
-        setModalState(prevState => { return !prevState; });
-    } 
-
+        const newRoom = {
+            id: rooms.length + 1,
+            sprat: texts.sprat,
+            prostorija: texts.prostorija,
+            brojUredjaja: 0
+        }; 
+        setRooms([...rooms, newRoom]);
+        setModalState(!modalState);
+    }
+    
     const EditRoom = () => { 
         const updatedRooms = rooms.map(room => {
             if (room.id === using) {
@@ -68,11 +75,12 @@ const Rooms = () => {
           }); 
         setRooms(updatedRooms);
         setEditModalState(prevState => { return !prevState; });
-    }  
+    }   
 
-    // useEffect(() => {
-        
-    //   }, [rooms]);
+    const handleDelete = (id:number) => { 
+        const updatedRooms = rooms.filter((room) => room.id !== id); 
+        setRooms(updatedRooms);
+    };
 
     return (
         <>
@@ -104,7 +112,7 @@ const Rooms = () => {
                                     <td className="px-6 py-4 whitespace-nowrap">{room.sprat}</td>
                                     <td className="px-6 py-4 space-x-2 whitespace-nowrap">
                                         <button type="button" className="px-4 py-2 font-semibold text-white duration-200 ease-in bg-blue-500 rounded hover:bg-blue-600" onClick={() => handleEditModal(room.id)}>Kontrola</button>
-                                        <button type="button" className="px-4 py-2 font-semibold text-white duration-200 ease-in bg-red-500 rounded hover:bg-red-600">Izbriši</button>
+                                        <button type="button" className="px-4 py-2 font-semibold text-white duration-200 ease-in bg-red-500 rounded hover:bg-red-600" onClick={() => handleDelete(room.id)}>Izbriši</button>
                                     </td>
                                 </tr> 
                             ))} 
@@ -129,9 +137,13 @@ const Rooms = () => {
                                 <form className="space-y-6" action="#"> 
                                     <div>
                                         <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Ime prostorije:</label>
-                                        <input type="text" name="prostorija" id="prostorija" value={rooms[0].prostorija} onChange={handleChange} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Ime prostorije" required />
+                                        <input type="text" name="prostorija" id="prostorija" value={texts.prostorija} onChange={handleChange} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Ime prostorije" required />
                                     </div> 
-                                    <button type="submit" className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-secondaryColor dark:hover:bg-primaryColor duration-500" onClick={AddRoom}>Kreiraj</button>
+                                    <div>
+                                        <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Sprat:</label>
+                                        <input type="text" name="sprat" id="sprat" value={texts.sprat} onChange={handleChange} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Ime prostorije" required />
+                                    </div> 
+                                    <button type="button" className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-secondaryColor dark:hover:bg-primaryColor duration-500" onClick={AddRoom}>Kreiraj</button>
                                 </form>
                             </div>
                         </div>
